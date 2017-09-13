@@ -1,0 +1,24 @@
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	background: -webkit-radial-gradient(rgba(234, 11, 141, 0.72), rgba(80, 0, 96, 0.75));
+}
+
+.circle{
+	position: absolute;
+}
+
+.center{
+	padding: 5%;
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.logo{
+	transform: scale(0.1);
+}
