@@ -70,9 +70,9 @@ const app  = {
         app.item.infowindow = new google.maps.InfoWindow;
         app.geocodeLatLng(latitude, longitude, geocoder, app.item.map);
               
-        app.item.marker.setVisible(true);
-        app.item.infoWindow.setContent('<div><strong>Mi ubicación actual</strong><br>');
-        app.item.infoWindow.open(app.item.map, app.item.marker);
+        //app.item.marker.setVisible(true);
+        //app.item.infoWindow.setContent('<div><strong>Mi ubicación actual</strong><br>');
+        //app.item.infoWindow.open(app.item.map, app.item.marker);
         
     },
 
@@ -132,7 +132,7 @@ const app  = {
 
     createMarker: function(map){
         let icono = {
-            url: 'http://icons.iconarchive.com/icons/sonya/swarm/128/Bike-icon.png',
+            url: 'http://icons.iconarchive.com/icons/icons-land/transporter/128/Car-Front-Red-icon.png',
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
@@ -162,7 +162,8 @@ const app  = {
             function(response, status) {
                 if (status === "OK") {
                     directionsDisplay.setDirections(response);
-                    let price_stimated =  response.routes[0].overview_path.length / 10  + "USD";
+                    let price_stimated =  response.routes[0].overview_path.length / 10  + " USD";
+                    app.genaratePrice(price_stimated);
                 } else {
                     app.errorRoute();
                 }
@@ -172,7 +173,12 @@ const app  = {
 
     errorRoute: function(){
         alert("No ingresaste un origen y un destino validos");
+    },
+
+    genaratePrice: function(price_stimated){
+        swal("Price",'Your ride will cost ' + price_stimated, "info");
     }
+
 };
 
 function initMap(){
