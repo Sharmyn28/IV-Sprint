@@ -20,22 +20,22 @@
         <hr>
     </header>
     <div class="container">
-        <form action="">
+        <form action="" id="secondForm">
             <div class="row">          
                 <div class="input-field col s6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="firstName" type="text" class="validate">
+                    <input id="name" name="name" type="text" minlength="3" class="validate" required>
                     <label for="firstName">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="lastName" type="text" class="validate">
-                    <label for="lastName">Last Name</label>
+                    <input id="lastname" name="lastname" type="text" minlength="3" class="validate" required>
+                    <label for="lastname">Last Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">mail_outline</i>
-                    <input id="email" type="email" class="validate">
+                    <input id="email" name="email" type="email" minlength="5" class="validate" required>
                     <label for="email">Email</label>
                 </div>
             </div>

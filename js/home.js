@@ -162,7 +162,8 @@ const app  = {
             function(response, status) {
                 if (status === "OK") {
                     directionsDisplay.setDirections(response);
-                    let price_stimated =  response.routes[0].overview_path.length / 10  + "USD";
+                    let price_stimated =  response.routes[0].overview_path.length / 10  + " USD";
+                    app.genaratePrice(price_stimated);
                 } else {
                     app.errorRoute();
                 }
@@ -172,7 +173,12 @@ const app  = {
 
     errorRoute: function(){
         alert("No ingresaste un origen y un destino validos");
+    },
+
+    genaratePrice: function(price_stimated){
+        swal("Price",'Your ride will cost ' + price_stimated, "info");
     }
+
 };
 
 function initMap(){
